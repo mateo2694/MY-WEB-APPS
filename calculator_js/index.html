@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Calculadora</title>
+    <title>Calculator</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" rel="stylesheet">
@@ -11,29 +11,29 @@
 
 <body>
     <header>
-        <h1>Calculadora para Dummies</h1>
+        <h1>Calculator for Dummies</h1>
     </header>
     <div id="container">
         <form onsubmit="calculate(this); return false" autocomplete="off">
-            <input type="text" name="x" placeholder="Ingrese x" value="">
-            <input type="text" name="y" placeholder="Ingrese y" value="">
+            <input type="text" name="x" placeholder="Enter x" value="">
+            <input type="text" name="y" placeholder="Enter y" value="">
             <label class="radio">+
-                <input type="radio" id="suma" name="operation" value="suma" checked>
+                <input type="radio" id="add" name="operation" value="add" checked>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">-
-                <input type="radio" id="resta" name="operation" value="resta">
+                <input type="radio" id="substract" name="operation" value="substract">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">x
-                <input type="radio" id="multiplicacion" name="operation" value="multiplicacion">
+                <input type="radio" id="multiply" name="operation" value="multiply">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">/
-                <input type="radio" id="division" name="operation" value="division">
+                <input type="radio" id="divide" name="operation" value="divide">
                 <span class="checkmark"></span>
             </label>
-            <input type="submit" name="submit">
+            <input type="submit" name="submit" value="Submit">
         </form>
         <div id="result"></div>
     </div>

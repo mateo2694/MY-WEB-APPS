@@ -7,19 +7,19 @@ function calculate(form) {
         var result = null;
 
         switch (operation) {
-            case 'suma':
+            case 'add':
                 result = x + y;
                 break;
 
-            case 'resta':
+            case 'substract':
                 result = x - y;
                 break;
 
-            case 'multiplicacion':
+            case 'multiply':
                 result = x * y;
                 break;
 
-            case 'division':
+            case 'divide':
                 result = x / y;
                 break;
 

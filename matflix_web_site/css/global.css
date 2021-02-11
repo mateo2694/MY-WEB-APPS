@@ -19,6 +19,10 @@
   font-weight: normal;
 }
 
+.focus--outline-none {
+  outline: none;
+}
+
 .hyperlink {
   text-decoration: none;
 }

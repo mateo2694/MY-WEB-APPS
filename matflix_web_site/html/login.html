@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="icon" href="../assets/logo-matflix--min.png">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+    <header class="header margin--normal">
+        <a class="header__logo" href="#"><img class="header__logo-img" src="../assets/logo-matflix.png"
+                alt="Logo Matflix"></a>
+    </header>
+
+    <section class="login margin--normal">
+        <div class="login__container style-box">
+            <h2 class="login__title font--normal" tabIndex="0">Inicia sesión</h2>
+            <form class="login__form">
+                <input class="login__input input font--normal" type="text" placeholder="Correo electrónico"
+                    spellcheck="false">
+                <input class="login__input input font--normal" type="password" placeholder="Contraseña">
+                <button class="login__button button font--normal">Iniciar sesión</button>
+                <div class="login__container--remember">
+                    <label class="font--normal">
+                        <input class="checkbox" type="checkbox" checked>
+                        Recuérdame
+                    </label>
+                    <a class="hyperlink font--emphasis" href="#">Olvidé mi contraseña</a>
+                </div>
+            </form>
+            <ul class="login__container--social">
+                <li class="login__social-item font--normal">
+                    <img class="login__social-icon" src="../assets/icon-google.png" alt="Google icon">
+                    <span class="login__social-text" tabIndex="0">
+                        Inicia sesión con Google
+                    </span>
+                </li>
+                <li class="login__social-item font--normal">
+                    <img class="login__social-icon" src="../assets/icon-twitter.png" alt="Twitter icon">
+                    <span class="login__social-text" tabIndex="0">
+                        Inicia sesión con Twitter
+                    </span>
+                </li>
+            </ul>
+            <p class="login__container--register font--normal">
+                ¿No tienes ninguna cuenta?
+                <a class="hyperlink font--emphasis" href="#">Regístrate</a>
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer margin--normal">
+        <a class="footer__link hyperlink font--transparent" href="#">Términos de uso</a>
+        <a class="footer__link hyperlink font--transparent" href="#">Declaración de privacidad</a>
+        <a class="footer__link hyperlink font--transparent" href="#">Centro de ayuda</a>
+    </footer>
+</body>
+
+</html>

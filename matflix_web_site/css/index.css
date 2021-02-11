@@ -1,0 +1,228 @@
+.header__menu--dropdown {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin-top: 30px;
+}
+
+.header__menu {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+}
+
+.header__menu:hover+.header__menu-list {
+    visibility: visible;
+}
+
+.menu__icon {
+    width: 40px;
+}
+
+.menu__title {
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 8px;
+}
+
+.menu__arrow {
+    width: 12px;
+}
+
+.header__menu-list {
+    cursor: pointer;
+    list-style-type: none;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    text-align: right;
+    visibility: hidden;
+}
+
+.header__menu-list:hover {
+    visibility: visible;
+}
+
+.menu__list-item {
+    margin: 10px 10px 10px 0px;
+}
+
+.menu__list-item:hover {
+    text-decoration: underline;
+}
+
+.main {
+    margin-top: 85px;
+    text-align: center;
+}
+
+.main__title {
+    font-size: 24px;
+}
+
+.main__input {
+    box-sizing: border-box;
+    width: 80%;
+}
+
+.carousel {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.carousel__title {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.carousel__container--scroll {
+    overflow-x: scroll;
+    padding: 40px 0px;
+}
+
+.carousel__container {
+    display: grid;
+    grid-auto-columns: 12.5%;
+    grid-auto-flow: column;
+    grid-template-columns: 12.5%;
+    grid-template-rows: 220px;
+}
+
+.carousel__item {
+    margin: 0px 9%;
+    position: relative;
+    transform-origin: center;
+    transition: opacity 200ms, transform 500ms, z-index 750ms;
+}
+
+.carousel__container:hover .carousel__item {
+    opacity: 0.7;
+}
+
+.carousel__container .carousel__item:hover {
+    opacity: 1.0;
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+.carousel__item:hover .carousel__item-description {
+    display: block;
+}
+
+.carousel__item-img {
+    border-radius: 5px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.carousel__item-description {
+    background-color: #364666;
+    border-radius: 0px 0px 5px 5px;
+    bottom: 0px;
+    box-sizing: border-box;
+    display: none;
+    left: 0px;
+    opacity: 0.95;
+    padding: 15px 10px;
+    position: absolute;
+    width: 100%;
+}
+
+.carousel__item-icon {
+    border-radius: 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-right: 2px;
+    width: 30px;
+}
+
+.carousel__item-icon:hover {
+    border: solid 2px #ebebeb;
+}
+
+.carousel__item-title {
+    display: block;
+    padding-top: 10px;
+}
+
+.carousel__item-details {
+    display: block;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+@media only screen and (max-width: 350px) {
+    .header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .header__menu--dropdown {
+        align-items: center;
+        flex-direction: row;
+        margin-top: 0px;
+    }
+    .header__menu {
+        height: fit-content;
+        padding-bottom: 0px;
+        padding-right: 15px;
+    }
+    .menu__icon {
+        display: none;
+    }
+    .menu__title {
+        padding-left: 0px;
+    }
+    .header__menu-list {
+        margin-top: 0px;
+        position: relative;
+        top: 19px;
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .carousel__container {
+        grid-auto-columns: 100%;
+        grid-template-columns: 100%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .main__title {
+        font-size: 20px;
+    }
+    .main__input {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 600px) {
+    .carousel__container {
+        grid-auto-columns: 50%;
+        grid-template-columns: 50%;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 750px) {
+    .carousel__container {
+        grid-auto-columns: 33.3%;
+        grid-template-columns: 33.3%;
+    }
+}
+
+@media only screen and (min-width: 751px) and (max-width: 1075px) {
+    .carousel__container {
+        grid-auto-columns: 25%;
+        grid-template-columns: 25%;
+    }
+}
+
+@media only screen and (min-width: 1076px) and (max-width: 1400px) {
+    .carousel__container {
+        grid-auto-columns: 16.6%;
+        grid-template-columns: 16.6%;
+    }
+}

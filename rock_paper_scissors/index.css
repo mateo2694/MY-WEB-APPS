@@ -1,0 +1,281 @@
+/* Reset global styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Text styles */
+
+.text--title {
+    color: #F72585;
+    font-family: "Major Mono Display", monospace;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.text--normal {
+    color: #3A0CA3;
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.text--emphasis {
+    color: #4895EF;
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.text--transparent {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.text--score {
+    background-color: #FFFFFF;
+    border: solid 2px #333333;
+    color: #333333;
+    display: inline-block;
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    min-width: 50px;
+    padding: 8px 0px 5px 0px;
+}
+
+.text--player {
+    background-color: #b3b3b3;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    min-width: 100px;
+    padding: 14px 0px 10px 0px;
+    text-align: center;
+}
+
+/* Index styles */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.container__input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 90px);
+}
+
+.input__text {
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.input__form {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 250px;
+}
+
+.form__radio {
+    display: none;
+}
+
+.radio__text {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: 400ms;
+}
+
+.radio__text:hover {
+    color: #4361EE;
+    font-size: 40px;
+}
+
+.image {
+    border: solid 4px #7209B7;
+    border-radius: 999px;
+    margin: 20px 20px;
+    width: 150px;
+}
+
+.container__output {
+    align-items: center;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 90px);
+}
+
+.output__moves {
+    align-items: center;
+    display: flex;
+}
+
+.output__single-move {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.output__text {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    visibility: hidden;
+}
+
+.output__button {
+    background-color: #B5179E;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    outline: none;
+    padding: 20px 0px;
+    transition: 400ms;
+    visibility: hidden;
+    width: 200px;
+}
+
+.output__button:hover {
+    background-color: #F72585;
+}
+
+.container__score {
+    align-items: center;
+    background-color: #4CC9F0;
+    display: flex;
+    justify-content: center;
+    height: 90px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Animations */
+
+.player-animation {
+    animation-duration: 2s;
+    animation-name: player-translate;
+}
+
+@keyframes player-translate {
+    0% {
+        margin-right: 30vw;
+    }
+    100% {
+        margin-right: 0px;
+    }
+}
+
+.result-animation {
+    animation-delay: 2s;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-name: result-pop-out;
+}
+
+@keyframes result-pop-out {
+    0% {
+        opacity: 0;
+        visibility: visible;
+        font-size: 30px;
+    }
+    10% {
+        opacity: 1;
+    }
+    75% {
+        font-size: 50px;
+    }
+    80% {
+        font-size: 28px;
+    }
+    85% {
+        font-size: 32px;
+    }
+    90% {
+        font-size: 30px;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+.button-animation {
+    animation-delay: 3.5s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-name: button-visible;
+}
+
+@keyframes button-visible {
+    0% {
+        opacity: 0;
+        visibility: visible;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Media queries */
+
+@media (max-width: 350px) {
+    .text--title {
+        font-size: 20px;
+    }
+    .radio__text:hover {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 351px) and (max-width: 600px) {
+    .text--title {
+        font-size: 24px;
+    }
+    .radio__text:hover {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .text--normal, .text--transparent {
+        font-size: 16px;
+    }
+    .text--score {
+        font-size: 16px;
+        min-width: 40px;
+        padding: 6px 0px 3px 0px;
+    }
+    .text--player {
+        border-radius: 5px;
+        font-size: 18px;
+        min-width: 18vw;
+        padding: 12px 0px 8px 0px;
+    }
+    .input__form {
+        min-height: 40vw;
+    }
+    .image {
+        margin: 0px 10px 10px 10px;
+        width: 25vw;
+    }
+    .output__button {
+        padding: 15px 0px;
+        width: 150px;
+    }
+}

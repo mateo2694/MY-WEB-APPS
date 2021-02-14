@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./assets/logo-play.png">
+    <title>Rock Paper Scissors</title>
+    <script type="application/javascript" src="index.js"></script>
+</head>
+
+<body class="container">
+    <section class="container__input">
+        <p class="input__text text--title">CLICK ONE TO PLAY</p>
+        <form class="input__form">
+            <input class="form__radio" type="radio" id="rock" name="move-type" value="rock" onclick="play()">
+            <label class="radio__text text--normal" for="rock">
+                <img class="image" src="./assets/icon-rock.png" alt="Rock move">
+                Rock
+            </label>
+            <input class="form__radio" type="radio" id="paper" name="move-type" value="paper" onclick="play()">
+            <label class="radio__text text--normal" for="paper">
+                <img class="image" src="./assets/icon-paper.png" alt="Paper move">
+                Paper
+            </label>
+            <input class="form__radio" type="radio" id="scissors" name="move-type" value="scissors" onclick="play()">
+            <label class="radio__text text--normal" for="scissors">
+                <img class="image" src="./assets/icon-scissors.png" alt="Scissors move">
+                Scissors
+            </label>
+        </form>
+    </section>
+
+    <section class="container__output">
+        <div class="output__moves">
+            <div class="output__single-move" id="player-move">
+                <span class="text--player">You</span>
+                <img class="image" id="player-img" src="" alt="Player move">
+            </div>
+            <div class="output__single-move" id="computer-move">
+                <span class="text--player">CPU</span>
+                <img class="image" id="computer-img" src="" alt="Computer move">
+            </div>
+        </div>
+        <p class="output__text text--emphasis">Result</p>
+        <button class="output__button text--transparent" type="button" onclick="playAgain()">Play again</button>
+    </section>
+
+    <section class="container__score">
+        <p class="text--transparent">
+            You: <span class="text--score" id="player-score">0</span> vs. CPU: <span class="text--score"
+                id="computer-score">0</span>
+        </p>
+    </section>
+
+</body>
+
+</html>

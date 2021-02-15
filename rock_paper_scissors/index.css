@@ -65,15 +65,17 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     justify-content: space-between;
+    min-height: 100vh;
+    overflow-y: scroll;
 }
 
 .container__input {
     display: flex;
     flex-direction: column;
+    height: calc(100vh - 90px);
     justify-content: center;
-    min-height: calc(100vh - 90px);
+    min-height: 500px;
 }
 
 .input__text {
@@ -118,8 +120,9 @@
     align-items: center;
     display: none;
     flex-direction: column;
+    height: calc(100vh - 90px);
     justify-content: center;
-    min-height: calc(100vh - 90px);
+    min-height: 500px;
 }
 
 .output__moves {
@@ -271,7 +274,7 @@
         min-height: 40vw;
     }
     .image {
-        margin: 0px 10px 10px 10px;
+        margin: 2vw 10px;
         width: 25vw;
     }
     .output__button {

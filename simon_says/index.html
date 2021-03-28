@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./assets/logo-play.png">
+    <title>Simon says</title>
+</head>
+
+<body>
+    <div id="gameboard" class="gameboard">
+        <div id="blue" class="gameboard__color color--blue" data-color="blue"></div>
+        <div id="purple" class="gameboard__color color--purple" data-color="purple"></div>
+        <div id="orange" class="gameboard__color color--orange" data-color="orange"></div>
+        <div id="green" class="gameboard__color color--green" data-color="green"></div>
+    </div>
+    <button id="button" class="button text--normal bubble-animation" onclick="startNewGame()">
+        <p id="textStart">START!</p>
+        <p id="textWin" class="text--hidden">YOU WIN</p>
+        <p id="textLose" class="text--hidden">YOU LOSE</p>
+        <p id="textPlayAgain" class="text--hidden text--smaller">PLAY AGAIN!</p>
+    </button>
+    <div id="levelIndicator" class="level-indicator text--emphasis bubble-animation hidden">0</div>
+</body>
+
+<script type="application/javascript" src="index.js"></script>
+
+</html>

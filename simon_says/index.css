@@ -1,0 +1,263 @@
+/* Reset global styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Text styles */
+
+.text--normal {
+    color: #e6e6e6;
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 10vw;
+    font-weight: normal;
+}
+
+.text--emphasis {
+    color: #4d4d4d;
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 6vw;
+    font-weight: normal;
+}
+
+.text--smaller {
+    font-size: 4vw;
+}
+
+.text--hidden {
+    display: none;
+}
+
+/* Index styles */
+
+body {
+    background: #e6e6e6;
+    height: 100vh;
+    /* Disables blue highlight when tap */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.gameboard {
+    border: solid 7px #b3b3b3;
+    border-radius: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 60vw;
+    left: calc(50% - 30vw);
+    overflow: hidden;
+    position: absolute;
+    top: calc(50% - 30vw);
+    width: 60vw;
+}
+
+.gameboard__color {
+    height: 50%;
+    width: 50%;
+}
+
+.color--blue {
+    background: #0e7580;
+}
+
+.color--purple {
+    background: #800080;
+}
+
+.color--orange {
+    background: #805c00;
+}
+
+.color--green {
+    background: #2d803a;
+}
+
+.button {
+    background: #ff5714;
+    border: none;
+    border-radius: 50%;
+    /* Extends the repaint dimensions to avoid junk pixels */
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 62vw;
+    left: calc(50% - 31vw);
+    outline: none;
+    position: absolute;
+    top: calc(50% - 31vw);
+    transition: 250ms;
+    width: 62vw;
+}
+
+.button:hover {
+    background: #e4ff1a;
+    color: #808080;
+}
+
+.level-indicator {
+    align-items: center;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.4);
+    display: flex;
+    height: 12vw;
+    justify-content: center;
+    left: calc(50% - 6vw);
+    padding-top: 0.5vw;
+    position: absolute;
+    top: calc(50% - 6vw);
+    transition: 250ms;
+    width: 12vw;
+}
+
+.hidden {
+    opacity: 0;
+    transition: 250ms;
+    visibility: hidden;
+}
+
+/* Javascript interactive styles */
+
+.border--highlight.blue {
+    border-color: #1be7ff;
+}
+
+.border--highlight.purple {
+    border-color: #ff00ff;
+}
+
+.border--highlight.orange {
+    border-color: #ffb800;
+}
+
+.border--highlight.green {
+    border-color: #59ff75;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.light {
+    z-index: 1;
+}
+
+.color--blue.light {
+    background: #1be7ff;
+    box-shadow: 0px 0px 10px 5px rgba(27, 231, 255, 0.5);
+}
+
+.color--purple.light {
+    background: #ff00ff;
+    box-shadow: 0px 0px 10px 5px rgba(255, 0, 255, 0.5);
+}
+
+.color--orange.light {
+    background: #ffb800;
+    box-shadow: 0px 0px 10px 5px rgba(255, 184, 0, 0.5);
+}
+
+.color--green.light {
+    background: #59ff75;
+    box-shadow: 0px 0px 10px 5px rgba(89, 255, 117, 0.5);
+}
+
+.passed {
+    background: #80ff95;
+    box-shadow: 0px 0px 10px 5px rgba(128, 255, 149, 0.4);
+    color: #00cc22;
+}
+
+.failed {
+    background: #ff808d;
+    box-shadow: 0px 0px 10px 5px rgba(255, 128, 141, 0.4);
+    color: #ff0019;
+}
+
+.won {
+    background: #00cc22;
+}
+
+.won:hover {
+    background: #80ff95;
+}
+
+.lost {
+    background: #ff0019;
+}
+
+.lost:hover {
+    background: #ff808d;
+    color: #4d4d4d;
+}
+
+/* Animations */
+
+.bubble-animation {
+    animation-direction: alternate;
+    animation-duration: 800ms;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    animation-name: scale-element;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes scale-element {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.gameboard-animation {
+    animation-direction: alternate;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: rotate-gameboard;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes rotate-gameboard {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Media queries */
+
+@media (orientation: landscape) {
+    .text--normal {
+        font-size: 10vh;
+    }
+    .text--emphasis {
+        font-size: 6vh;
+    }
+    .text--smaller {
+        font-size: 4vh;
+    }
+    .gameboard {
+        height: 60vh;
+        left: calc(50% - 30vh);
+        top: calc(50% - 30vh);
+        width: 60vh;
+    }
+    .button {
+        height: 62vh;
+        left: calc(50% - 31vh);
+        top: calc(50% - 31vh);
+        width: 62vh;
+    }
+    .level-indicator {
+        height: 12vh;
+        left: calc(50% - 6vh);
+        padding-top: 0.5vh;
+        top: calc(50% - 6vh);
+        width: 12vh;
+    }
+}

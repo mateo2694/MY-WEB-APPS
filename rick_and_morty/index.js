@@ -14,7 +14,7 @@ const GRID_WIDTH = grid.getBoundingClientRect().width;
 const GRID_GAP = 10;
 const GRID_ROWS = 4;
 const CELL_WIDTH = 100;
-const FETCHED_CHARACTERS = Math.floor((GRID_WIDTH + GRID_GAP) / (CELL_WIDTH + GRID_GAP)) * GRID_ROWS;
+const REQUESTED_CHARACTERS = Math.floor((GRID_WIDTH + GRID_GAP) / (CELL_WIDTH + GRID_GAP)) * GRID_ROWS;
 const SHOW_INTERVAL = 50;
 const GLOW_TIME = 1000;
 const AFTER_MATCH_TIME = 3000;
@@ -26,8 +26,8 @@ function restartQuest() {
     mainCharacterImage.setAttribute('src', './assets/loading.gif');
     mainCharacterImage.setAttribute('alt', 'Loading');
     starsBurstingEffect.classList.add('display--none');
-    injectCharactersHTML(FETCHED_CHARACTERS);
-    fetchRandomIDs(FETCHED_CHARACTERS);
+    injectCharactersHTML(REQUESTED_CHARACTERS);
+    fetchRandomIDs(REQUESTED_CHARACTERS);
 }
 
 // Insert cells into grid
@@ -50,16 +50,17 @@ function injectCharactersHTML(numberOfCharacters) {
 
 // Generate array of random IDs, choose random wanted character and fetch random characters
 function fetchRandomIDs(numberOfIDs) {
-    let randomID = [];
+    let index = 1;
+    let allCharactersIDs = new Array(TOTAL_API_CHARACTERS).fill(null).map(() => index++);
+    let randomIDs = [];
 
     for (let i = 0; i < numberOfIDs; i++) {
-        let randomNumber = Math.floor((Math.random() * TOTAL_API_CHARACTERS));
-        while (randomID.includes(randomNumber)) { randomNumber = Math.floor((Math.random() * TOTAL_API_CHARACTERS)); }
-        randomID.push(randomNumber);
+        let randomIndex = Math.floor((Math.random() * allCharactersIDs.length));
+        randomIDs.push(allCharactersIDs.splice(randomIndex, 1)[0]);
     }
 
-    wantedCharacter.id = randomID[Math.floor((Math.random() * numberOfIDs))];
-    fetchCharacters(randomID).then(onFetchCharactersResolve).catch(onFetchCharactersReject);
+    wantedCharacter.id = randomIDs[Math.floor((Math.random() * numberOfIDs))];
+    fetchCharacters(randomIDs).then(onFetchCharactersResolve).catch(onFetchCharactersReject);
 }
 
 // Request characters to API
@@ -87,13 +88,14 @@ function onFetchCharactersResolve(response) {
 
     response.json()
         .then(characters => {
-            loadedCharacters.textContent = String(FETCHED_CHARACTERS);
+            const fetchedCharacters = characters.length;
+            loadedCharacters.textContent = String(fetchedCharacters);
             let matchingCharacter = characters.find(character => character.id === wantedCharacter.id);
             wantedCharacter.name = matchingCharacter.name;
             wantedCharacter.image = matchingCharacter.image;
             mainCharacterName.innerText = wantedCharacter.name;
 
-            for (let i = 0; i < characters.length; i++) {
+            for (let i = 0; i < fetchedCharacters; i++) {
                 let target = {
                     character: document.getElementById(`character${i}`),
                     picture: document.querySelector(`#character${i} #characterImage`),
@@ -188,7 +190,7 @@ function removeGlow() {
 }
 
 function removeEventListeners() {
-    for (let i = 0; i < FETCHED_CHARACTERS; i++) {
+    for (let i = 0; i < REQUESTED_CHARACTERS; i++) {
         const target = { character: document.getElementById(`character${i}`) };
         target.character.removeEventListener('click', checkCharacterMatch);
     }

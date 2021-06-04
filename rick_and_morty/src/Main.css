@@ -1,0 +1,19 @@
+.main {
+    min-height: calc(100vh - 186px - 104px);
+    text-align: center;
+}
+
+/* Animations */
+
+.scale-up-animation {
+    animation: scale-up 100ms ease 0s normal 1 forwards;
+}
+
+@keyframes scale-up {
+    0% {
+        transform: scale(0.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

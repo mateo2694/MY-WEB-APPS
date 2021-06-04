@@ -1,0 +1,15 @@
+/* Reset global styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Index styles */
+
+body {
+  background: #010127;
+  /* Disables blue highlight when tap */
+  -webkit-tap-highlight-color: transparent;
+}

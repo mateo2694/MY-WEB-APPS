@@ -1,0 +1,38 @@
+/* Text styles */
+
+.text--normal {
+  color: white;
+  font-family: 'Londrina Solid', cursive;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.text--emphasis {
+  color: #FD64B7;
+  font-family: 'Londrina Solid', cursive;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.text--focus {
+  color: #0AF4F9;
+}
+
+.text--contrast {
+  color: #6B1C77;
+}
+
+.text--large {
+  font-size: 36px;
+}
+
+.text--small {
+  font-size: 12px;
+}
+
+/* App styles */
+
+.lateral-padding {
+  padding-left: 100px;
+  padding-right: 100px;
+}

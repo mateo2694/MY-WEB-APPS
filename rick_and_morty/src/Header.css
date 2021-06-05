@@ -32,3 +32,20 @@
         filter: hue-rotate(359deg);
     }
 }
+
+/* Media queries */
+
+@media (max-width: 650px) {
+    .logo {
+        display: none;
+    }
+    .header__list {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 450px) {
+    .header {
+        padding-top: 20px;
+    }
+}

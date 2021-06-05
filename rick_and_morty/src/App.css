@@ -36,3 +36,37 @@
   padding-left: 100px;
   padding-right: 100px;
 }
+
+/* Media queries */
+
+@media (max-width: 900px) {
+  .text--large {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 760px) {
+  .lateral-padding {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 450px) {
+  .text--normal {
+    font-size: 16px;
+  }
+  .text--emphasis {
+    font-size: 16px;
+  }
+  .text--large {
+    font-size: 28px;
+  }
+  .text--small {
+    font-size: 12px;
+  }
+  .lateral-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

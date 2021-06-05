@@ -7,8 +7,8 @@ import Board from './Board.js';
 function Main(props) {
     return (
         <main className='main lateral-padding'>
-            <Target characterName='Mateo'/>
-            <Board cubes={48} />
+            <Target name='Mateo' />
+            <Board cubes={14} onGridMount={props.onGridMount} />
         </main>
     );
 }

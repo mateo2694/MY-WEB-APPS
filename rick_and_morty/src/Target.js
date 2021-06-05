@@ -7,7 +7,7 @@ function Target(props) {
     return (
         <section>
             <h1 className='text--large text-animation'>
-                Can you find <span className='text--focus'>{props.characterName}</span> ?
+                Can you find <span className='text--focus'>{props.name}</span> ?
             </h1>
             <Bubble />
         </section>

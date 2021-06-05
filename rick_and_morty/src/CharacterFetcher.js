@@ -1,5 +1,5 @@
 class CharacterFetcher {
-    constructor(grid) {
+    constructor(grid, onFetchCharacters) {
         this.API_URL = 'https://rickandmortyapi.com/api/character/';
         this.TOTAL_API_CHARACTERS = 671;
         this.GRID_WIDTH = grid.getBoundingClientRect().width;
@@ -9,10 +9,10 @@ class CharacterFetcher {
         this.TOTAL_CHARACTERS = Math.floor(
             (this.GRID_WIDTH + this.GRID_GAP) / (this.CELL_WIDTH + this.GRID_GAP)
         ) * this.GRID_ROWS;
-        this.SHOW_INTERVAL = 50;
-        this.GLOW_TIME = 1000;
-        this.AFTER_MATCH_TIME = 3000;
+        this.characters = [];
         this.wantedCharacter = {};
+        this.error = null;
+        this.onFetchCharacters = onFetchCharacters;
         this.fetchRandomIDs();
     }
 
@@ -39,20 +39,46 @@ class CharacterFetcher {
 
         try {
             const response = await this.fetchCharacters(randomIDs);
-            console.log(response);
-            this.onFetchCharacters(response);
+            this.read(response);
         } catch (error) {
-            //lift_status -> error
+            this.error = error;
+            this.liftState();
         }
     }
 
     async fetchCharacters(IDs) {
         try {
             const response = await fetch(this.API_URL + IDs);
-            return (response.ok) ? response : new Error(`The HTTP request failed - ${response.status}`);
+
+            if (response.ok) {
+                return response;
+            } else {
+                throw new Error(`The HTTP request failed - ${response.status}`);
+            }
         } catch (error) {
-            return new Error('The API server is not responding');
+            throw (error);
         }
+    }
+
+    async read(response) {
+        try {
+            this.characters = await response.json();
+            this.wantedCharacter = this.characters.find(character => {
+                return character.id === this.wantedCharacter.id;
+            });
+        } catch (error) {
+            this.error = error;
+        } finally {
+            this.liftState();
+        }
+    }
+
+    liftState() {
+        this.onFetchCharacters();
+    }
+
+    checkMatch({ id }) {
+        return (id === this.wantedCharacter.id) ? true : false;
     }
 }
 

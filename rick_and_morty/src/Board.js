@@ -7,9 +7,6 @@ class Board extends React.Component {
     constructor(props) {
         super(props);
         this.grid = React.createRef();
-        this.content = new Array(props.cubes).fill(null).map((element, i) => {
-            return <Cube key={i} id={10} name='Mateo' />;
-        });
     }
 
     componentDidMount() {
@@ -17,9 +14,13 @@ class Board extends React.Component {
     }
 
     render() {
+        const content = this.props.characters.map((character, i) => {
+            return <Cube key={i} character={character} />;
+        });
+
         return (
             <section className='grid' ref={this.grid} >
-                {this.content}
+                {content}
             </section>
         );
     }

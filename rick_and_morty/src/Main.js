@@ -8,7 +8,7 @@ function Main(props) {
     return (
         <main className='main lateral-padding'>
             <Target name='Mateo' />
-            <Board cubes={14} onGridMount={props.onGridMount} />
+            <Board characters={props.characters} onGridMount={props.onGridMount} />
         </main>
     );
 }

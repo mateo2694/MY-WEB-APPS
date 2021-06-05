@@ -9,18 +9,20 @@ import warning from './assets/icon-warning.png';
 
 function Cube(props) {
     let statusIcon = warning;
-    let status = 'Warning';
+    const { id, name, status, image } = (props.character === null) ?
+        { id: null, name: 'Loading', status: 'Warning', image: loading } :
+        props.character;
 
     return (
-        <div className='character'>
+        <div className='character' >
             <div className='cube'>
-                <img className='character__image' src={loading} alt='Loading' />
+                <img className='character__image' src={image} alt={name} />
                 <div className='character__info text--small text--contrast'>
-                    ID: {props.id}<br />{props.name}
+                    ID: {id}<br />{name}
                     <img className='character__status' src={statusIcon} alt={status} />
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

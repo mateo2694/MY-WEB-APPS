@@ -6,7 +6,7 @@
 /* Animations */
 
 .scale-up-animation {
-    animation: scale-up 100ms ease 0s normal 1 forwards;
+    animation: scale-up 750ms ease 0s normal 1 forwards;
 }
 
 @keyframes scale-up {

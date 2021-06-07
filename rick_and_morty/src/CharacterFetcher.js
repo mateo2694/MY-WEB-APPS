@@ -2,17 +2,22 @@ class CharacterFetcher {
     constructor(grid, onFetchCharacters) {
         this.API_URL = 'https://rickandmortyapi.com/api/character/';
         this.TOTAL_API_CHARACTERS = 671;
-        this.GRID_WIDTH = grid.getBoundingClientRect().width;
         this.GRID_GAP = 10;
         this.GRID_ROWS = 4;
         this.CELL_WIDTH = 100;
-        this.TOTAL_CHARACTERS = Math.floor(
-            (this.GRID_WIDTH + this.GRID_GAP) / (this.CELL_WIDTH + this.GRID_GAP)
+        this.gridReference = grid;
+        this.onFetchCharacters = onFetchCharacters;
+        this.refreshCharacters();
+    }
+
+    refreshCharacters() {
+        this.gridWidth = this.gridReference.getBoundingClientRect().width;
+        this.totalCharacters = Math.floor(
+            (this.gridWidth + this.GRID_GAP) / (this.CELL_WIDTH + this.GRID_GAP)
         ) * this.GRID_ROWS;
         this.characters = [];
         this.wantedCharacter = {};
         this.error = null;
-        this.onFetchCharacters = onFetchCharacters;
         this.fetchRandomIDs();
     }
 
@@ -21,7 +26,7 @@ class CharacterFetcher {
         let allCharactersIDs = new Array(this.TOTAL_API_CHARACTERS).fill(null).map(() => index++);
         let randomIDs = [];
 
-        for (let i = 0; i < this.TOTAL_CHARACTERS; i++) {
+        for (let i = 0; i < this.totalCharacters; i++) {
             let randomIndex = Math.floor((Math.random() * allCharactersIDs.length));
             randomIDs.push(allCharactersIDs.splice(randomIndex, 1)[0]);
         }
@@ -31,7 +36,7 @@ class CharacterFetcher {
     }
 
     setWantedCharacter(randomIDs) {
-        this.wantedCharacter.id = randomIDs[Math.floor((Math.random() * this.TOTAL_CHARACTERS))];
+        this.wantedCharacter.id = randomIDs[Math.floor((Math.random() * this.totalCharacters))];
     }
 
     async fetchRandomIDs() {
@@ -77,7 +82,7 @@ class CharacterFetcher {
         this.onFetchCharacters();
     }
 
-    checkMatch({ id }) {
+    checkMatch(id) {
         return (id === this.wantedCharacter.id) ? true : false;
     }
 }

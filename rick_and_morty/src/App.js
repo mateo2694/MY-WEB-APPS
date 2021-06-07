@@ -9,51 +9,95 @@ import CharacterFetcher from './CharacterFetcher.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isClickAllowed: false,
+      serverStatus: '...',
+      characters: [],
+      wantedCharacter: null,
+      isBursting: false
+    };
     this.GLOW_TIME = 1000;
     this.AFTER_MATCH_TIME = 4000;
-    this.states = {
-      request: 0,
-      guess: 1,
-      display: 2,
-      error: 3
-    }
-    this.state = {
-      state: this.states.request,
-      serverStatus: '...',
-      characters: []
-    };
+    this.error = null;
     this.onGridMount = this.onGridMount.bind(this);
     this.onFetchCharacters = this.onFetchCharacters.bind(this);
-  }
-
-  onFetchCharacters() {
-    let state = this.states.error;
-    let status = 'DOWN';
-
-    if (this.fetcher.error === null) {
-      state = this.states.guess;
-      status = 'UP';
-    }
-
-    this.setState({
-      state: state,
-      serverStatus: status,
-      characters: this.fetcher.characters
-    });
+    this.onCubeClick = this.onCubeClick.bind(this);
   }
 
   onGridMount(grid) {
     this.fetcher = new CharacterFetcher(grid, this.onFetchCharacters);
     this.setState({
-      characters: new Array(this.fetcher.TOTAL_CHARACTERS).fill(null)
+      characters: new Array(this.fetcher.totalCharacters).fill(null),
+    });
+  }
+
+  onFetchCharacters() {
+    let isClickAllowed = false;
+    let status = 'DOWN';
+    this.error = this.fetcher.error;
+
+    if (this.error === null) {
+      isClickAllowed = true;
+      status = 'UP';
+    }
+
+    this.setState({
+      isClickAllowed: isClickAllowed,
+      serverStatus: status,
+      characters: this.fetcher.characters,
+      wantedCharacter: this.fetcher.wantedCharacter
+    });
+  }
+
+  onCubeClick(id) {
+    if (!this.state.isClickAllowed) {
+      return null;
+    }
+
+    if (this.fetcher.checkMatch(id)) {
+      this.setState({
+        isClickAllowed: false,
+        isBursting: true
+      });
+
+      window.scroll({
+        top: 156,
+        left: 0,
+        behavior: 'smooth'
+      });
+
+      setTimeout(() => {
+        this.refreshApp();
+        this.fetcher.refreshCharacters();
+      }, this.AFTER_MATCH_TIME);
+
+      return 'glow--right';
+    } else {
+      return 'glow--wrong';
+    }
+  }
+
+  refreshApp() {
+    this.setState({
+      characters: new Array(this.fetcher.totalCharacters).fill(null),
+      wantedCharacter: null,
+      isBursting: false
     });
   }
 
   render() {
     return (
       <div className='App text--normal'>
-        <Header serverStatus={this.state.serverStatus} characters={this.state.characters.length} />
-        <Main characters={this.state.characters} onGridMount={this.onGridMount} />
+        <Header
+          serverStatus={this.state.serverStatus}
+          numberOfCharacters={this.state.characters.length} />
+        <Main
+          error={this.error}
+          wantedCharacter={this.state.wantedCharacter}
+          isBursting={this.state.isBursting}
+          characters={this.state.characters}
+          onGridMount={this.onGridMount}
+          onCubeClick={this.onCubeClick} />
         <Footer />
       </div>
     );

@@ -15,7 +15,7 @@ class Board extends React.Component {
 
     render() {
         const content = this.props.characters.map((character, i) => {
-            return <Cube key={i} character={character} />;
+            return <Cube key={i} character={character} onClick={this.props.onCubeClick} />;
         });
 
         return (

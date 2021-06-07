@@ -5,6 +5,12 @@ import Tag from './Tag.js';
 
 
 function Header(props) {
+    let tagType = props.serverStatus === 'UP' ?
+        'tag--right' :
+        props.serverStatus === 'DOWN' ?
+            'tag--wrong' :
+            'tag--neutral';
+
     return (
         <header className='header lateral-padding'>
             <img className='logo' src={logo} alt='Rick and Morty Explorer logo' />
@@ -13,10 +19,10 @@ function Header(props) {
                     The Rick and Morty API <span className='text--focus hue-animation'>Random Explorer</span>
                 </li>
                 <li className='list__item'>
-                    API server status: <Tag tagType='tag--right' content={props.serverStatus} />
+                    API server status: <Tag tagType={tagType} content={props.serverStatus} />
                 </li>
                 <li className='list__item'>
-                    Characters: <Tag tagType='tag--neutral' content={props.characters} />
+                    Characters: <Tag tagType='tag--neutral' content={props.numberOfCharacters} />
                 </li>
             </ul>
         </header>

@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/MY-WEB-APPS/rick_and_morty/static/css/main.143ee571.chunk.css",
+    "main.js": "/MY-WEB-APPS/rick_and_morty/static/js/main.bf9894fe.chunk.js",
+    "main.js.map": "/MY-WEB-APPS/rick_and_morty/static/js/main.bf9894fe.chunk.js.map",
+    "runtime-main.js": "/MY-WEB-APPS/rick_and_morty/static/js/runtime-main.3a5d9aa7.js",
+    "runtime-main.js.map": "/MY-WEB-APPS/rick_and_morty/static/js/runtime-main.3a5d9aa7.js.map",
+    "static/js/2.4f456ed5.chunk.js": "/MY-WEB-APPS/rick_and_morty/static/js/2.4f456ed5.chunk.js",
+    "static/js/2.4f456ed5.chunk.js.map": "/MY-WEB-APPS/rick_and_morty/static/js/2.4f456ed5.chunk.js.map",
+    "index.html": "/MY-WEB-APPS/rick_and_morty/index.html",
+    "static/css/main.143ee571.chunk.css.map": "/MY-WEB-APPS/rick_and_morty/static/css/main.143ee571.chunk.css.map",
+    "static/js/2.4f456ed5.chunk.js.LICENSE.txt": "/MY-WEB-APPS/rick_and_morty/static/js/2.4f456ed5.chunk.js.LICENSE.txt",
+    "static/media/loading.1bbef8c1.gif": "/MY-WEB-APPS/rick_and_morty/static/media/loading.1bbef8c1.gif",
+    "static/media/logo-rick-and-morty-explorer.6afafa79.svg": "/MY-WEB-APPS/rick_and_morty/static/media/logo-rick-and-morty-explorer.6afafa79.svg",
+    "static/media/stars-bursting.d9c23032.gif": "/MY-WEB-APPS/rick_and_morty/static/media/stars-bursting.d9c23032.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3a5d9aa7.js",
+    "static/js/2.4f456ed5.chunk.js",
+    "static/css/main.143ee571.chunk.css",
+    "static/js/main.bf9894fe.chunk.js"
+  ]
+}

@@ -1,0 +1,115 @@
+.video {
+  margin: auto;
+  max-width: 720px;
+}
+
+.video__title {
+  font-size: 24px;
+  margin: 10px 0px 10px 15px;
+}
+
+.video__container {
+  position: relative;
+  width: 100%;
+}
+
+.movie {
+  width: 100%;
+}
+
+.ads {
+  background: #364666;
+  bottom: 50px;
+  margin: 0;
+  max-height: calc(100% - 50px);
+  opacity: 0.8;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+}
+
+.ads__link {
+  align-items: flex-start;
+  display: flex;
+  text-decoration: none;
+}
+
+.ads__img {
+  height: 50px;
+  margin-right: 20px;
+  width: 50px;
+}
+
+.ads__title {
+  font-size: 14px;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.ads__body {
+  font-size: 12px;
+  margin: 0;
+}
+
+.video__button img {
+  height: 15px;
+  width: 15px;
+}
+
+.video__button {
+  border-radius: 50%;
+  box-sizing: content-box;
+  height: 15px;
+  margin: 5px 0px 10px 5px;
+  padding: 8px;
+  width: 15px;
+}
+
+.comments {
+  margin: auto;
+  max-width: 720px;
+}
+
+.comments__title {
+  font-size: 20px;
+  margin: 40px 0px 30px 0px;
+}
+
+.comment__img {
+  float: left;
+  margin-bottom: 10px;
+  width: 40px;
+}
+
+.comment__author {
+  float: left;
+  margin-left: 10px;
+  padding-top: 10px;
+}
+
+.comment__body {
+  clear: both;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 550px) {
+  .video__title {
+    font-size: 20px;
+  }
+  .comments__title {
+    font-size: 16px;
+  }
+  .comment__img {
+    width: 30px;
+  }
+  .comment__author {
+    font-size: 12px;
+    padding-top: 8px;
+  }
+  .comment__body {
+    font-size: 12px;
+  }
+}

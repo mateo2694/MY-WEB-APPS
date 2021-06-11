@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.font--normal {
+  color: #ebebeb;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.font--emphasis {
+  color: #5ccc9d;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.font--transparent {
+  color: rgba(255, 255, 255, 0.35);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.focus--outline-none {
+  outline: none;
+}
+
+.hyperlink {
+  text-decoration: none;
+}
+
+.hyperlink:hover {
+  text-decoration: underline;
+}
+
+.margin--normal {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.style-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #364666;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.3), 0px 6px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border-style: none;
+  outline-style: none;
+  padding: 10px 20px;
+}
+
+.input::placeholder {
+  color: #999999;
+}
+
+.button {
+  background-color: #6f4a8e;
+  border-radius: 20px;
+  border-style: none;
+  cursor: pointer;
+  outline-style: none;
+  padding: 10px 20px;
+}
+
+.button:hover {
+  background-color: #8f62b3;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  width: 50px;
+  height: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6f4a8e;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8f62b3;
+}
+
+body {
+  background-color: #050505;
+  background-image: linear-gradient(#050505 30%, #221f3b 100%);
+  margin: 0px;
+  /* Disables blue highlight when tap */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header {
+  background-color: #050505;
+  display: flex;
+  height: 90px;
+  justify-content: space-between;
+}
+
+.header__logo {
+  height: fit-content;
+  margin-top: 30px;
+}
+
+.header__logo-img {
+  width: 120px;
+}
+
+.footer {
+  align-items: center;
+  display: flex;
+  height: 120px;
+}
+
+.footer__link {
+  padding-right: 40px;
+}
+
+@media only screen and (max-width: 550px) {
+  .margin--normal {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .footer {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer__link {
+    padding-bottom: 4px;
+    padding-right: 0px;
+  }
+}

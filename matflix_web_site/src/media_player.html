@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/media_player.css">
+  <link rel="icon" href="./img/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Roboto:wght@500&display=swap"
+    rel="stylesheet">
+  <title>Media Player</title>
+  <script defer src="./ts/media_player.ts"></script>
+</head>
+
+<body>
+  <header class="header margin--normal">
+    <a class="header__logo" href="#">
+      <img class="header__logo-img" src="./img/logo-matflix.png" alt="Logo Matflix">
+    </a>
+  </header>
+
+  <main class="main margin--normal">
+    <section class="video style-box">
+      <h1 class="video__title font--normal">Big Buck Bunny</h1>
+      <div class="video__container">
+        <video class="movie">
+          <source src="./videos/BigBuckBunny.mp4">
+        </video>
+        <div id="adsContainer"></div>
+        <button id="playButton" class="video__button button font--normal">
+          <img src="./img/icons/icon-play-simple.png" alt="Play">
+        </button>
+        <button id="muteButton" class="video__button button font--normal">
+          <img src="./img/icons/icon-sound.png" alt="Mute">
+        </button>
+      </div>
+    </section>
+
+    <section class="comments">
+      <h2 class="comments__title font--normal">Comentarios</h2>
+      <div class="comment">
+        <img class="comment__img" src="./img/icons/icon-user-comment.png" alt="User picture">
+        <h3 class="comment__author font--emphasis">usuario_1</h3>
+        <p class="comment__body font--transparent">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit massa, interdum gravida leo scelerisque urna non
+          pulvinar orci vivamus, libero ac vehicula in magnis dignissim eleifend. Fringilla neque facilisis ornare ante
+          hac vitae turpis mollis potenti sociis, cubilia magna ultricies quam odio nullam egestas porta sagittis
+          blandit auctor, ligula augue accumsan pellentesque malesuada velit tortor inceptos donec. Arcu tempus
+          parturient aptent sed nascetur imperdiet nam vel, diam fames risus duis habitant lobortis purus vestibulum,
+          aliquet mi primis praesent congue eros est.
+        </p>
+      </div>
+      <div class="comment">
+        <img class="comment__img" src="./img/icons/icon-user-comment.png" alt="User picture">
+        <h3 class="comment__author font--emphasis">usuario_2</h3>
+        <p class="comment__body font--transparent">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit massa, interdum gravida leo scelerisque urna non
+          pulvinar orci vivamus, libero ac vehicula in magnis dignissim eleifend. Fringilla neque facilisis ornare ante
+          hac vitae turpis mollis potenti sociis, cubilia magna ultricies quam odio nullam egestas porta sagittis
+          blandit auctor, ligula augue accumsan pellentesque malesuada velit tortor inceptos donec. Arcu tempus
+          parturient aptent sed nascetur imperdiet nam vel, diam fames risus duis habitant lobortis purus vestibulum,
+          aliquet mi primis praesent congue eros est.
+        </p>
+      </div>
+      <div class="comment">
+        <img class="comment__img" src="./img/icons/icon-user-comment.png" alt="User picture">
+        <h3 class="comment__author font--emphasis">usuario_3</h3>
+        <p class="comment__body font--transparent">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit massa, interdum gravida leo scelerisque urna non
+          pulvinar orci vivamus, libero ac vehicula in magnis dignissim eleifend. Fringilla neque facilisis ornare ante
+          hac vitae turpis mollis potenti sociis, cubilia magna ultricies quam odio nullam egestas porta sagittis
+          blandit auctor, ligula augue accumsan pellentesque malesuada velit tortor inceptos donec. Arcu tempus
+          parturient aptent sed nascetur imperdiet nam vel, diam fames risus duis habitant lobortis purus vestibulum,
+          aliquet mi primis praesent congue eros est.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer margin--normal">
+    <a class="footer__link hyperlink font--transparent" href="#">Términos de uso</a>
+    <a class="footer__link hyperlink font--transparent" href="#">Declaración de privacidad</a>
+    <a class="footer__link hyperlink font--transparent" href="#">Centro de ayuda</a>
+  </footer>
+</body>
+
+</html>

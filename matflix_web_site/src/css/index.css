@@ -34,9 +34,6 @@
 .header__menu-list {
     cursor: pointer;
     list-style-type: none;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    padding: 0px;
     text-align: right;
     visibility: hidden;
 }
@@ -60,6 +57,7 @@
 
 .main__title {
     font-size: 24px;
+    margin: 20px 0px;
 }
 
 .main__input {
@@ -74,7 +72,6 @@
 
 .carousel__title {
     font-size: 20px;
-    margin-bottom: 0px;
 }
 
 .carousel__container--scroll {
